@@ -14,3 +14,10 @@
  *= require_self
  */
 @import 'bootstrap';
+
+@import url('/app/javascript/components/components/components.css');
+
+.nav-links{
+    display: flex;
+    justify-content: space-between;
+}
