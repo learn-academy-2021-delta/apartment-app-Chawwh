@@ -1,11 +1,17 @@
-import React from "react"
+import React, { Component } from 'react'
+// import PropTypes from "prop-types"
+import Home from "./pages/Home"
+import AboutMe from "./pages/AboutMe"
+import Header from "./components/Header"
+import Footer from "./components/Footer"
 import {
   BrowserRouter as  Router,
   Route,
-  Routes
+  Routes,
+  
 } from "react-router-dom"
 
-class App extends React.Component {
+class App extends Component {
 render(){
   const {
     logged_in,
@@ -15,16 +21,14 @@ render(){
     sign_out_route
   } = this.props
     return (
-      <>
-      <h1>Hello World</h1>
       <Router>
-  <Routes>
-    <Route exact path="/" component={ Home } />
-    <Route path="/about" component={ AboutUs } />
-    <Route path="/learn" component={ LearnMore } />
-  </Routes>
-</Router>
-      </>
+        <Header />
+      <Routes>
+        <Route exact path="/" element={ <Home /> } />
+        <Route path="/about" element={ <AboutMe /> } />
+      </Routes>
+      <Footer />
+    </Router>
     );
   }
 }
