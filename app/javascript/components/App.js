@@ -12,17 +12,11 @@ import {
 } from "react-router-dom"
 
 class App extends Component {
+  
 render(){
-  const {
-    logged_in,
-    current_user,
-    new_user_route,
-    sign_in_route,
-    sign_out_route
-  } = this.props
     return (
       <Router>
-        <Header />
+        <Header {...this.props} />
       <Routes>
         <Route exact path="/" element={ <Home /> } />
         <Route path="/about" element={ <AboutMe /> } />
