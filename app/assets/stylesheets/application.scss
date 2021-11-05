@@ -15,9 +15,27 @@
  */
 @import 'bootstrap';
 
-@import url('/app/javascript/components/components/components.css');
+*{
+    background-color: rgb(42, 42, 42);
+    color: white;
+}
 
 .nav-links{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+}
+
+#logo{
+    height: 100px;
+    width: 100px;
+    right: 1rem;
+}
+
+#home-container{
+    text-align: center;
+    height: 85vh;
+    width: 88vw;
+    border: solid 4px white;
+    border-radius: 25px;
+    padding: 0 15% 0 15%;
 }

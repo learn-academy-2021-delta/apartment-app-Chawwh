@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 // import PropTypes from "prop-types"
 import Home from "./pages/Home"
-import AboutUs from "./pages/AboutUs"
-import LearnMore from "./pages/LearnMore"
+import AboutMe from "./pages/AboutMe"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import {
@@ -26,8 +25,7 @@ render(){
         <Header />
       <Routes>
         <Route exact path="/" element={ <Home /> } />
-        <Route path="/about" element={ <AboutUs /> } />
-        <Route path="/learn" element={ <LearnMore /> } />
+        <Route path="/about" element={ <AboutMe /> } />
       </Routes>
       <Footer />
     </Router>
