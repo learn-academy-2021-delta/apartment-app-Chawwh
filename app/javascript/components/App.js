@@ -5,7 +5,8 @@ import AboutMe from "./pages/AboutMe"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import ApptIndex from './pages/ApptIndex'
-import apartments from "./mockApartments"
+import ApptShow from './pages/ApptShow'
+import { withRouter } from "react-router";
 import {
   BrowserRouter as  Router,
   Route,
@@ -26,7 +27,7 @@ class App extends Component {
   }
 
   apptRead = () => {
-    fetch("http://localhost:3000/apartments")
+    fetch("/apartments")
     .then(response => response.json())
     .then(apptArray => this.setState({apartments: apptArray}))
     .catch(errors => console.log(errors))
@@ -40,7 +41,9 @@ render(){
       <Routes>
         <Route exact path="/" element={ <Home /> } />
         <Route path="/about" element={ <AboutMe /> } />
-          <Route path="/listings"  element={<ApptIndex appts={this.state.apartments} /> } />
+        <Route path="/listings"  element={<ApptIndex appts={this.state.apartments} /> } />
+        <Route path="/showlisting/:id" element={<ApptShow appts={this.state.apartments}  />} />
+ 
       </Routes>
       <Footer />
     </Router>
