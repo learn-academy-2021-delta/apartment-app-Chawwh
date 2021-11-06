@@ -8,7 +8,6 @@ class ApptIndex extends Component {
     return (
         <>
         <div className="body-container">
-            Test
            <div className="index-body">
             {this.props.appts && this.props.appts.map(appt => {
             return ( 

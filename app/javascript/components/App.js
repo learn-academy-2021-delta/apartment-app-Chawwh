@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import PropTypes from "prop-types"
+import PropTypes from "prop-types"
 import Home from "./pages/Home"
 import AboutMe from "./pages/AboutMe"
 import Header from "./components/Header"
@@ -17,8 +17,19 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      apartments: apartments
+      apartments: []
     }
+  }
+
+  componentDidMount() {
+    this.apptRead()
+  }
+
+  apptRead = () => {
+    fetch("http://localhost:3000/apartments")
+    .then(response => response.json())
+    .then(apptArray => this.setState({apartments: apptArray}))
+    .catch(errors => console.log(errors))
   }
   
 render(){

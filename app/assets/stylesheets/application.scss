@@ -2,13 +2,13 @@
 @import 'bootstrap';
 @font-face {
     font-family: Aller_Bd;
-    src: url('app/javascript/components/assets/Aller_Bd.ttf');
+    src: url('app/javascript/components/assets/fonts/Aller_Bd.ttf') format("truetype");
 }
 
 *{
     background-color: rgb(42, 42, 42);
     color: white;
-    font-family: Aller_Bd;
+    font-family:'Trebuchet MS', 'Aller_Bd';
 }
 
 .nav-links{
@@ -39,6 +39,14 @@ a{
 }
 a:hover {
     cursor: pointer !important;
-    color: #cd3ca4 !important;
+    color: #ff23c1 !important;
     text-decoration: none !important;
   }
+  .body-container{
+    text-align: center;
+    height: 85vh;
+    width: 88vw;
+    border: solid 4px white;
+    border-radius: 5px;
+    margin: 0 5% 0 5%;
+}
