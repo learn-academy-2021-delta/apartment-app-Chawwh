@@ -1,23 +1,14 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+
 @import 'bootstrap';
+@font-face {
+    font-family: Aller_Bd;
+    src: url('app/javascript/components/assets/fonts/Aller_Bd.ttf') format("truetype");
+}
 
 *{
     background-color: rgb(42, 42, 42);
     color: white;
+    font-family:'Trebuchet MS', 'Aller_Bd';
 }
 
 .nav-links{
@@ -26,6 +17,8 @@
 }
 
 #logo{
+    padding-top: 10px;
+    padding-left: 10px;
     height: 100px;
     width: 100px;
     right: 1rem;
@@ -36,6 +29,24 @@
     height: 85vh;
     width: 88vw;
     border: solid 4px white;
-    border-radius: 25px;
-    padding: 0 15% 0 15%;
+    border-radius: 5px;
+    margin: 0 5% 0 5%;
+}
+
+a{
+    color: white !important;
+    text-decoration: none !important;
+}
+a:hover {
+    cursor: pointer !important;
+    color: #ff23c1 !important;
+    text-decoration: none !important;
+  }
+  .body-container{
+    text-align: center;
+    height: 85vh;
+    width: 88vw;
+    border: solid 4px white;
+    border-radius: 5px;
+    margin: 0 5% 0 5%;
 }

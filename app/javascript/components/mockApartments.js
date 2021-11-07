@@ -1,4 +1,4 @@
-apartments = [
+let apartments = [
     {
         id:1,
         street:"42 Wallaby Way",
@@ -53,7 +53,4 @@ apartments = [
     }
 ]
 
-apartments.each do |attributes|
-    Apartment.create attributes
-    p "creating apartments #{attributes}"
-end
+export default apartments
