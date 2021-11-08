@@ -9,6 +9,7 @@ class ApptIndex extends Component {
         <>
         <div className="body-container">
            <div className="index-body">
+             <h3>All Listings</h3>
             {this.props.appts && this.props.appts.map(appt => {
             return ( 
                 <p key={appt.id}>
