@@ -1,6 +1,5 @@
 apartments = [
     {
-        id:1,
         street:"42 Wallaby Way",
         city: "Sydney",
         state:"New South Wales",
@@ -10,10 +9,8 @@ apartments = [
         bedrooms: 2,
         bathrooms: 1.5,
         pets:"fish only",
-        user_id: 1
     },
     {
-        id:2,
         street:"1000 Oak Lane",
         city:"Pallet",
         state:"Kanto",
@@ -23,10 +20,8 @@ apartments = [
         bedrooms: 3,
         bathrooms: 2.0,
         pets:"all types welcome",
-        user_id: 1
     },
     {
-        id:3,
         street:"123 Sesame Street",
         city: "Manhattan",
         state:"New York",
@@ -36,10 +31,8 @@ apartments = [
         bedrooms: 4,
         bathrooms: 2.5,
         pets:"sure why not",
-        user_id: 1
     },
     {
-        id:4,
         street:"345 Cave Stone Road",
         city: "Bedrock",
         state:"Bedrock",
@@ -49,11 +42,12 @@ apartments = [
         bedrooms: 1,
         bathrooms: 1.0,
         pets:"Dinos only",
-        user_id: 1
     }
 ]
 
+first_user = User.first
+
 apartments.each do |attributes|
-    Apartment.create attributes
+    first_user.apartments.create attributes
     p "creating apartments #{attributes}"
 end

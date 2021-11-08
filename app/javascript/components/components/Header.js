@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
-import logo from '/Users/sahtra/Desktop/Projects/apartment_app/app/javascript/components/assets/housu-icon-black.png'
+import icon from '../assets/housu-icon-black.png'
 
 class Header extends Component {
   render() {
@@ -14,7 +14,7 @@ class Header extends Component {
     return (
       <header>
         <NavLink to="/">
-       <img id="logo" src={logo} alt="housu logo"></img>
+       <img id="logo" src={icon} alt="housu logo"></img>
        </NavLink>
        <div className="nav-links">
          <ul>

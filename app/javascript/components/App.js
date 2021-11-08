@@ -34,15 +34,15 @@ class App extends Component {
   }
   
 render(){
-  console.log(this.state.apartments);
+  const { apartments } = this.state
     return (
       <Router>
         <Header {...this.props} />
       <Routes>
         <Route exact path="/" element={ <Home /> } />
         <Route path="/about" element={ <AboutMe /> } />
-        <Route path="/listings"  element={<ApptIndex appts={this.state.apartments} /> } />
-        <Route path="/showlisting/:id" element={<ApptShow appts={this.state.apartments}  />} />
+        <Route path="/listings"  element={<ApptIndex appts={apartments} /> } />
+        <Route path="/showlisting/:id" element={<ApptShow appts={apartments}  />} />
  
       </Routes>
       <Footer />

@@ -8,7 +8,7 @@ class ApptShow extends Component {
     return (
         <>
         <div className="body-container">
-         <h1>Test for show page</h1>
+         <h3>Test for show page</h3>
         </div>
         </>
     )
