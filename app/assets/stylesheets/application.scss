@@ -6,10 +6,12 @@
     url("Aller_Bd.ttf") format("truetype"),
     url("Aller_Bd.svg#Aller-Bold") format("svg");font-weight:normal;font-style:normal;}
 
+@import url('https://fonts.googleapis.com/css2?family=Allerta&display=swap');
+
 *{
     background-color: rgb(42, 42, 42);
     color: white;
-    font-family: "Aller Bold", 'Trebuchet MS';
+    font-family: 'Aller Bold', 'Allerta', 'Trebuchet MS';
 }
 
 .nav-links{

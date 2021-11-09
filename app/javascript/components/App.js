@@ -6,6 +6,7 @@ import Header from "./components/Header"
 import Footer from "./components/Footer"
 import ApptIndex from './pages/ApptIndex'
 import ApptShow from './pages/ApptShow'
+import NotFound from './pages/NotFound'
 import { withRouter } from "react-router";
 import {
   BrowserRouter as  Router,
@@ -43,7 +44,7 @@ render(){
         <Route path="/about" element={ <AboutMe /> } />
         <Route path="/listings"  element={<ApptIndex appts={apartments} /> } />
         <Route path="/showlisting/:id" element={<ApptShow appts={apartments}  />} />
- 
+        <Route element={ <NotFound /> } />
       </Routes>
       <Footer />
     </Router>
