@@ -47,9 +47,24 @@ a:hover {
   }
   .body-container{
     text-align: center;
-    height: 85vh;
+    height: fit-content;
     width: 88vw;
     border: solid 4px white;
     border-radius: 5px;
     margin: 0 5% 0 5%;
+}
+
+.card-div{
+    padding-right: 25%;
+    margin-bottom: 10%;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 1rem;
+    font-size: 1.5rem;
+}
+
+#index-card{
+    height: 600px;
+    width: 450px;
 }
