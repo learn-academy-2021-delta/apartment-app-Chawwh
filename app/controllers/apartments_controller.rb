@@ -4,6 +4,11 @@ class ApartmentsController < ApplicationController
         render json: appts
     end
 
+    def show
+        appt = Apartment.find(params[:id])
+        render json: appt
+    end
+
     def create
         appt = Apartment.create(appt_params)
         if appt.valid?
@@ -32,6 +37,6 @@ class ApartmentsController < ApplicationController
     private
 
     def appt_params
-        params.require(:apartment).permit(:street, :city, :state, :manager, :email, :price, :bedrooms, :bathrooms, :pets)
+        params.require(:apartment).permit(:street, :city, :state, :manager, :email, :price, :bedrooms, :bathrooms, :pets, :photo_url)
     end
 end
