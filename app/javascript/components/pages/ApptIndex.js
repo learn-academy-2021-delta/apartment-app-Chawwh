@@ -22,9 +22,9 @@ class ApptIndex extends Component {
                   color="light"
                   className="index-card"
                 >
-                  <CardImg
+                  <CardImg id="index-img"
                         alt="photo of apartment listing"
-                        src="https://picsum.photos/318/180"
+                        src="https://momsgotthestuff.com/wp-content/uploads/2021/06/easy-minecraft-builds-12.jpg"
                         top
                         width="100%"
                       />

@@ -12,6 +12,7 @@ import {
   Route,
   Switch,
 } from "react-router-dom"
+import ProtApptNew from './pages/ProtApptNew'
 
 class App extends Component {
   constructor(props){
@@ -32,6 +33,19 @@ class App extends Component {
     .then(apptArray => this.setState({apartments: apptArray}))
     .catch(errors => console.log(errors))
   }
+
+  createAppt = (newAppt) => {
+    fetch("/apartments", {
+      body: JSON.stringify(newAppt),
+      heaaders: {
+        "Content-Type" : "application/json"
+      },
+      method: "POST"
+    })
+    .then(response => response.json())
+    .then(payload => this.apptRead())
+    .catch(errors => (console.log(errors)))
+  }
   
 render(){
 
@@ -48,6 +62,7 @@ render(){
           let appt = this.state.apartments.find(a => a.id === +id)
           return <ApptShow appt={appt} />
         }} />
+        <Route path="/addlisting" render={(props) => <ProtApptNew createAppt={this.createAppt} {...this.props} />} />
         <Route component={NotFound} />
       </Switch>
       <Footer />

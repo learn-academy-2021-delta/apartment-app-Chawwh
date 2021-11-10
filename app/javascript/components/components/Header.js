@@ -29,7 +29,10 @@ class Header extends Component {
            }
    
           { logged_in &&
+          <>
+          <NavLink to="/addlisting">Add Listing</NavLink>
            <a href={sign_out_route}>Sign Out</a>
+           </>
           }
        </div>
       </header>
