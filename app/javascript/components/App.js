@@ -26,26 +26,11 @@ class App extends Component {
     this.apptRead()
   }
 
-  getInfo = (id, apartment) => {
-    this.setState({ apptID: id, currentAppt: apartment})
-    console.log("get info ran");
-  }
-
   apptRead = () => {
     fetch("/apartments")
     .then(response => response.json())
     .then(apptArray => this.setState({apartments: apptArray}))
     .catch(errors => console.log(errors))
-  }
-
-  updateAppt = (updatedInfo, id) => {
-    fetch("/apartments/${id}", {body: JSON.stringify(updatedInfo), 
-      headers: { "Content-Type" : "application/json"
-       },
-     method: "PATCH"
-    }).then(response => response.json())
-    .then(payload => this.apptRead())
-    .then(errors => (console.log(errors)))
   }
   
 render(){
@@ -55,7 +40,7 @@ render(){
         <Header {...this.props} />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/about" render={ <AboutMe /> } />
+        <Route path="/about" component={AboutMe} />
         <Route path="/listings"  render={(props) => <ApptIndex appts={this.state.apartments}  /> } />
         <Route path="/showlisting/:id" 
         render={(props) => {

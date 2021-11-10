@@ -4,10 +4,6 @@ import { Card, CardBody, CardTitle, CardText, CardSubtitle, CardImg} from "react
 
 
 class ApptIndex extends Component {
-  constructor(props) {
-    super(props)
-
-  }
 
   render() {
 
