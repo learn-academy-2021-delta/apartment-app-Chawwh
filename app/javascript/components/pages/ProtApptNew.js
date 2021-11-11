@@ -16,7 +16,8 @@ class ProtApptNew extends Component{
                 bedrooms: "",
                 bathrooms: "",
                 pets:"",
-                photo_url: ""
+                photo_url: "",
+                user_id: this.props.current_user.id
             },
             submitted: false
         }
@@ -34,17 +35,9 @@ class ProtApptNew extends Component{
       }
 
 render(){
-    const {
-        logged_in,
-        current_user,
-        new_user_route,
-        sign_in_route,
-        sign_out_route
-      } = this.props
     return(
         <>
         <div className="body-container">
-        {logged_in && 
         <>
          <h3>Create Your Apartment Listing Here</h3>
         <Form className="form">
@@ -165,7 +158,7 @@ render(){
         </Form>
         {this.state.submitted && <Redirect to="/listings" />}
         </>
-        }
+        
         </div>
         </>
     )

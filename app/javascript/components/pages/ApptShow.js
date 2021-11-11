@@ -18,7 +18,7 @@ class ApptShow extends Component {
         >
           <CardImg
                 alt="photo of apartment listing"
-                src="https://momsgotthestuff.com/wp-content/uploads/2021/06/easy-minecraft-builds-12.jpg"
+                src={appt.photo_url}
                 top
                 width="100%"
               />

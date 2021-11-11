@@ -17,6 +17,7 @@
 .nav-links{
     display: flex;
     justify-content: space-around;
+    top: 20px;
 }
 
 #logo{
@@ -54,13 +55,17 @@ a:hover {
     margin: 0 5% 0 5%;
 }
 
-.card-div{
-    align-items: center;
+.index-body{
     display: grid;
     position: relative;
-    grid-template-rows: repeat(3, auto);
-    grid-gap: 1rem;
-    font-size: 1.5rem;
+    grid-template-columns: repeat(2, auto);
+    grid-gap: .5rem;
+    align-items: center;
+}
+
+.card-div{
+   display: flex;
+  
 }
 
 .index-card{
@@ -74,7 +79,7 @@ a:hover {
 
 .form-id{
     text-align: left;
-    width: 550px;
+    width: 555px;
 }
 #form-button{
     text-align: center;
