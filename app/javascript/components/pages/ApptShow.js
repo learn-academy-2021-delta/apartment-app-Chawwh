@@ -18,7 +18,7 @@ class ApptShow extends Component {
         >
           <CardImg
                 alt="photo of apartment listing"
-                src="https://picsum.photos/318/180"
+                src={appt.photo_url}
                 top
                 width="100%"
               />

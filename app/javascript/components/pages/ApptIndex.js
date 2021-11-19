@@ -10,21 +10,22 @@ class ApptIndex extends Component {
     return (
         <>
         <div className="body-container">
+        <h3>All Listings</h3>
            <div className="index-body">
-             <h3>All Listings</h3>
             {this.props.appts && this.props.appts.map(appt => {
             return (
               <>
-              <div id="card-div">
+              <div className="card-div">
                   <NavLink to={`/showlisting/${appt.id}`}>
                 <Card
                   body
                   color="light"
                   className="index-card"
+                  key={appt.id}
                 >
-                  <CardImg
+                  <CardImg id="index-img"
                         alt="photo of apartment listing"
-                        src="https://picsum.photos/318/180"
+                        src={appt.photo_url}
                         top
                         width="100%"
                       />

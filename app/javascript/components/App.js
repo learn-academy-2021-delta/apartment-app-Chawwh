@@ -6,12 +6,14 @@ import Header from "./components/Header"
 import Footer from "./components/Footer"
 import ApptIndex from './pages/ApptIndex'
 import ApptShow from './pages/ApptShow'
+import ProtApptNew from './pages/ProtApptNew'
 import NotFound from './pages/NotFound'
 import {
   BrowserRouter as  Router,
   Route,
   Switch,
 } from "react-router-dom"
+
 
 class App extends Component {
   constructor(props){
@@ -32,6 +34,24 @@ class App extends Component {
     .then(apptArray => this.setState({apartments: apptArray}))
     .catch(errors => console.log(errors))
   }
+
+  createAppt = (newAppt) => {
+    fetch("/apartments", {
+      body: JSON.stringify(newAppt),
+      headers: {
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+    .then(response => {
+      if(response.status === 422){
+        alert("Oops! Something when wrong. Please try again.")
+      }
+      return response.json()
+    })
+    .then(() => this.apptRead())
+    .catch(errors => console.log(errors))
+  }
   
 render(){
 
@@ -48,6 +68,9 @@ render(){
           let appt = this.state.apartments.find(a => a.id === +id)
           return <ApptShow appt={appt} />
         }} />
+          {this.props.logged_in &&
+        <Route path="/addlisting" render={(props) => { return <ProtApptNew createAppt={this.createAppt} current_user={this.props.current_user} />}} />
+          }
         <Route component={NotFound} />
       </Switch>
       <Footer />
